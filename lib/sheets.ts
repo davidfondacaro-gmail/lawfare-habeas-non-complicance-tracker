@@ -150,12 +150,21 @@ function mapRowsToCases(headers: string[], dataRows: string[][]): Case[] {
 }
 
 export async function fetchCases(): Promise<{ cases: Case[]; loadTime: string }> {
-  const resp = await fetch(API_URL)
-  if (!resp.ok) {
-    const body = await resp.text()
-    throw new Error(`HTTP ${resp.status}: ${body.substring(0, 200)}`)
+  let data: { values?: string[][] }
+
+  // Try local snapshot first; fall back to live Google Sheets API
+  const localResp = await fetch("/sheet-data.json")
+  if (localResp.ok) {
+    data = await localResp.json()
+  } else {
+    const resp = await fetch(API_URL)
+    if (!resp.ok) {
+      const body = await resp.text()
+      throw new Error(`HTTP ${resp.status}: ${body.substring(0, 200)}`)
+    }
+    data = await resp.json()
   }
-  const data = await resp.json()
+
   const rows: string[][] = data.values || []
   const headers = rows[0] || []
   const cases = mapRowsToCases(headers, rows.slice(1))
