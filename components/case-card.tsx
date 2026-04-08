@@ -33,22 +33,33 @@ export function CaseCard({ caseData: c, isOpen, onToggle, groupColor }: CaseCard
           <div className="flex items-start gap-3">
             {/* Gavel icon */}
             <div
-              className="size-7 rounded-md shrink-0 mt-0.5 flex items-center justify-center text-sm"
-              style={{ background: "#ef444410", border: "1px solid #ef444425" }}
+              className="shrink-0 mt-0.5 flex items-center justify-center text-2xl text-foreground"
               aria-hidden="true"
             >
               ⚖
             </div>
 
             <div className="flex-1 min-w-0">
-              {/* Jurisdiction + violation badges */}
-              <div className="flex gap-1.5 flex-wrap mb-1 items-center">
-                <span
-                  className="text-[0.6rem] uppercase tracking-wider font-semibold px-1.5 py-px rounded-sm"
-                  style={{ color: groupColor, background: groupColor + "0c" }}
-                >
-                  {c.jurisdiction}
-                </span>
+              {/* Case name */}
+              <div className="text-[16px] font-semibold text-foreground italic leading-snug">
+                {c.caseName}
+              </div>
+
+              {/* Case number */}
+              {c.caseNo && (
+                <div className="text-[0.7rem] text-muted-foreground italic mb-1">
+                  No. {c.caseNo}
+                </div>
+              )}
+
+              {/* Meta row */}
+              <div className="text-[0.7rem] text-muted-foreground flex gap-3 flex-wrap mb-1">
+                <span>{c.jurisdiction}</span>
+                {c.judge && <><span className="text-muted-foreground/40">|</span><span className="text-muted-foreground">{c.judge}</span></>}
+              </div>
+
+              {/* Violation badges */}
+              <div className="flex gap-1.5 flex-wrap items-center">
                 {c.violations
                   .filter((v) => v && v !== "Misc")
                   .map((v) => (
@@ -64,29 +75,12 @@ export function CaseCard({ caseData: c, isOpen, onToggle, groupColor }: CaseCard
                       {v}
                     </span>
                   ))}
-                {c.docketIds?.length > 0 && (
-                  <span className="font-mono text-[0.55rem] text-green-400 bg-green-400/5 border border-green-400/15 px-1.5 py-px rounded-sm">
-                    CL
-                  </span>
-                )}
-              </div>
-
-              {/* Case name */}
-              <div className="text-sm font-semibold text-foreground italic leading-snug mb-0.5">
-                {c.caseName}
-              </div>
-
-              {/* Meta row */}
-              <div className="text-[0.7rem] text-muted-foreground flex gap-3 flex-wrap">
-                <span>{c.jurisdiction}</span>
-                {c.caseNo && <span className="font-mono text-[0.65rem]">No. {c.caseNo}</span>}
-                {c.judge && <span className="text-muted-foreground/70">{c.judge}</span>}
               </div>
             </div>
 
             {/* Date */}
             {c.date && (
-              <div className="font-mono text-[0.6rem] text-muted-foreground shrink-0">
+              <div className="text-[0.7rem] text-muted-foreground shrink-0">
                 {c.date}
               </div>
             )}
