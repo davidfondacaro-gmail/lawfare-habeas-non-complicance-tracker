@@ -1,8 +1,9 @@
 "use client"
 
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { ChevronDown, ChevronRight } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
 
 export interface FacetOption {
   value: string
@@ -22,6 +23,58 @@ interface FacetedSidebarProps {
   facets: FacetGroup[]
   hasActiveFilters: boolean
   onClearAll: () => void
+}
+
+function FacetOptionItem({ opt, checked, dimmed, onToggle }: {
+  opt: FacetOption
+  checked: boolean
+  dimmed: boolean
+  onToggle: () => void
+}) {
+  const [active, setActive] = useState(false)
+  const spanRef = useRef<HTMLSpanElement>(null)
+  const isTruncated = active && spanRef.current
+    ? spanRef.current.scrollWidth > spanRef.current.clientWidth
+    : false
+
+  return (
+    <li>
+      <label
+        className={cn(
+          "flex items-center gap-2.5 px-4 py-1.5 text-sm cursor-pointer select-none hover:bg-muted/40 transition-colors",
+          dimmed && "opacity-40"
+        )}
+      >
+        <input
+          type="checkbox"
+          checked={checked}
+          onChange={onToggle}
+          onFocus={() => setActive(true)}
+          onBlur={() => setActive(false)}
+          className="size-3.5 rounded border-border accent-red-500 cursor-pointer shrink-0"
+          aria-label={opt.label}
+        />
+        <Tooltip open={isTruncated}>
+          <TooltipTrigger
+            render={
+              <span
+                ref={spanRef}
+                className="flex-1 min-w-0 truncate text-foreground/90 leading-tight"
+                onMouseEnter={() => setActive(true)}
+                onMouseLeave={() => setActive(false)}
+              />
+            }
+          >
+            {opt.label}
+          </TooltipTrigger>
+          <TooltipContent side="top">{opt.label}</TooltipContent>
+        </Tooltip>
+        <span className="text-[0.7rem] text-muted-foreground tabular-nums shrink-0">
+          {opt.count}
+        </span>
+      </label>
+    </li>
+  )
 }
 
 function FacetSection({ facet }: { facet: FacetGroup }) {
@@ -53,34 +106,15 @@ function FacetSection({ facet }: { facet: FacetGroup }) {
 
       {open && (
         <ul className="py-1" role="group" aria-label={facet.label}>
-          {facet.options.map((opt) => {
-            const checked = facet.selected.has(opt.value)
-            const dimmed = opt.count === 0 && !checked
-            return (
-              <li key={opt.value}>
-                <label
-                  className={cn(
-                    "flex items-center gap-2.5 px-4 py-1.5 text-sm cursor-pointer select-none hover:bg-muted/40 transition-colors",
-                    dimmed && "opacity-40"
-                  )}
-                >
-                  <input
-                    type="checkbox"
-                    checked={checked}
-                    onChange={() => facet.onToggle(opt.value)}
-                    className="size-3.5 rounded border-border accent-red-500 cursor-pointer shrink-0"
-                    aria-label={opt.label}
-                  />
-                  <span className="flex-1 min-w-0 truncate text-foreground/90 leading-tight">
-                    {opt.label}
-                  </span>
-                  <span className="text-[0.7rem] text-muted-foreground tabular-nums shrink-0">
-                    {opt.count}
-                  </span>
-                </label>
-              </li>
-            )
-          })}
+          {facet.options.map((opt) => (
+            <FacetOptionItem
+              key={opt.value}
+              opt={opt}
+              checked={facet.selected.has(opt.value)}
+              dimmed={opt.count === 0 && !facet.selected.has(opt.value)}
+              onToggle={() => facet.onToggle(opt.value)}
+            />
+          ))}
         </ul>
       )}
     </div>
