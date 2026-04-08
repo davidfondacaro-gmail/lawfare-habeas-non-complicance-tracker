@@ -90,7 +90,7 @@ function FacetSection({ facet }: { facet: FacetGroup }) {
 export function FacetedSidebar({ facets, hasActiveFilters, onClearAll }: FacetedSidebarProps) {
   return (
     <aside
-      className="w-56 shrink-0 self-start sticky top-4"
+      className="w-1/4 shrink-0 self-start sticky top-4"
       aria-label="Filter cases"
     >
       <div className="rounded-lg border border-border bg-card overflow-hidden">
