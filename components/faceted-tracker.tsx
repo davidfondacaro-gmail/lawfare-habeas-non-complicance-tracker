@@ -222,19 +222,15 @@ export function FacetedTracker() {
         <div className="max-w-[1280px] mx-auto">
           <div className="flex items-center justify-between mb-1">
             <div className="flex items-baseline gap-3">
-              <span className="text-[0.55rem] font-bold uppercase tracking-[0.22em] text-red-500">
+              <span className="text-[14px] font-bold uppercase tracking-[0.22em] text-lawfare-green">
                 Lawfare Institute
-              </span>
-              <span className="text-muted-foreground/40 text-xs">•</span>
-              <span className="text-[0.55rem] uppercase tracking-[0.12em] text-muted-foreground font-medium">
-                Habeas Non-Compliance Tracker
               </span>
             </div>
             <ThemeToggle />
           </div>
 
           <h1 className="text-2xl font-bold text-foreground leading-tight mb-1.5">
-            Government Contempt &amp; Non-Compliance
+            Habeas Non-Compliance Tracker
           </h1>
 
           <p className="text-sm text-muted-foreground max-w-2xl leading-relaxed">
