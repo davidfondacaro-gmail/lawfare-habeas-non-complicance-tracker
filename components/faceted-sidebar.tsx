@@ -137,7 +137,7 @@ export function FacetedSidebar({ facets, hasActiveFilters, onClearAll }: Faceted
             <button
               type="button"
               onClick={onClearAll}
-              className="text-[0.65rem] text-red-500 hover:text-red-400 transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring rounded-sm"
+              className="text-[0.65rem] text-lawfare-green hover:text-lawfare-green/70 underline transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring rounded-sm"
             >
               Clear all
             </button>

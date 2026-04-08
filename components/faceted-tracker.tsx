@@ -219,7 +219,7 @@ export function FacetedTracker() {
     <div className="min-h-screen bg-background text-foreground">
       {/* HEADER */}
       <header className="border-b border-border dark:border-[#2a1a1a] dark:bg-gradient-to-b dark:from-[#101018] dark:to-[#08080c] px-5 pt-7 pb-5">
-        <div className="max-w-[1280px] mx-auto">
+        <div className="max-w-[1280px] mx-auto px-5">
           <div className="flex items-center justify-between mb-1">
             <div className="flex items-baseline gap-3">
               <span className="text-[14px] font-bold uppercase tracking-[0.22em] text-lawfare-green">
