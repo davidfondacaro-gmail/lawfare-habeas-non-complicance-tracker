@@ -1,5 +1,5 @@
-import { Tracker } from "@/components/tracker"
+import { FacetedTracker } from "@/components/faceted-tracker"
 
 export default function Home() {
-  return <Tracker />
+  return <FacetedTracker />
 }
