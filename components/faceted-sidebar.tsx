@@ -51,7 +51,7 @@ function FacetOptionItem({ opt, checked, dimmed, onToggle }: {
           onChange={onToggle}
           onFocus={() => setActive(true)}
           onBlur={() => setActive(false)}
-          className="size-3.5 rounded border-border accent-red-500 cursor-pointer shrink-0"
+          className="size-3.5 rounded border-border accent-lawfare-green cursor-pointer shrink-0"
           aria-label={opt.label}
         />
         <Tooltip open={isTruncated}>
@@ -92,7 +92,7 @@ function FacetSection({ facet }: { facet: FacetGroup }) {
         <span className="flex items-center gap-2">
           {facet.label}
           {selectedCount > 0 && (
-            <span className="inline-flex items-center justify-center h-4 min-w-4 px-1 rounded-full bg-red-500 text-[0.6rem] font-bold text-white leading-none">
+            <span className="inline-flex items-center justify-center h-4 min-w-4 px-1 rounded-full bg-lawfare-green text-[0.6rem] font-bold text-white leading-none">
               {selectedCount}
             </span>
           )}
