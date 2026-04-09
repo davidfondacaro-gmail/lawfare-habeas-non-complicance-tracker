@@ -95,7 +95,7 @@
   --destructive: #ef4444;
   --border: #1a1a28;
   --input: #2a2a3a;
-  --ring: #ef4444;
+  --ring: #4dd0d6;
   --sidebar: #0e0e16;
   --sidebar-foreground: #d0d0e0;
   --sidebar-primary: #ef4444;
@@ -103,7 +103,7 @@
   --sidebar-accent: #1a1a28;
   --sidebar-accent-foreground: #d0d0e0;
   --sidebar-border: #1a1a28;
-  --sidebar-ring: #ef4444;
+  --sidebar-ring: #4dd0d6;
 }
 
 @layer base {
