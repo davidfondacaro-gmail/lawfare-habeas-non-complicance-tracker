@@ -65,12 +65,7 @@ export function CaseCard({ caseData: c, isOpen, onToggle, groupColor }: CaseCard
                   .map((v) => (
                     <span
                       key={v}
-                      className="text-[0.55rem] uppercase tracking-wider font-semibold px-1.5 py-px rounded-sm border"
-                      style={{
-                        color: getViolationColor(v),
-                        background: getViolationColor(v) + "0c",
-                        borderColor: getViolationColor(v) + "20",
-                      }}
+                      className="text-[0.65rem] text-muted-foreground bg-muted px-2 py-0.5 rounded-sm"
                     >
                       {v}
                     </span>
