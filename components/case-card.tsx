@@ -101,14 +101,14 @@ export function CaseCard({ caseData: c, isOpen, onToggle, groupColor }: CaseCard
             )}
 
             {/* Links */}
-            <div className="flex gap-2 flex-wrap mb-3.5">
+            <div className="flex gap-4 flex-wrap mb-3.5">
               {c.filingUrls?.map((url, i) => (
                 <a
                   key={"f" + i}
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[0.65rem] text-red-500 bg-red-500/5 border border-red-500/15 px-2.5 py-1 rounded hover:bg-red-500/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  className="text-xs text-lawfare-green underline transition-colors hover:text-lawfare-green/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 >
                   View Filing/Order
                   {c.entryNos?.[i]
@@ -124,7 +124,7 @@ export function CaseCard({ caseData: c, isOpen, onToggle, groupColor }: CaseCard
                   href={c.docketUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[0.65rem] text-blue-400 bg-blue-400/5 border border-blue-400/15 px-2.5 py-1 rounded hover:bg-blue-400/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  className="text-xs text-lawfare-green underline transition-colors hover:text-lawfare-green/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 >
                   Full Docket on CourtListener ↗
                 </a>
@@ -137,7 +137,7 @@ export function CaseCard({ caseData: c, isOpen, onToggle, groupColor }: CaseCard
                     href={url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[0.65rem] text-blue-400 bg-blue-400/5 border border-blue-400/15 px-2.5 py-1 rounded hover:bg-blue-400/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                    className="text-xs text-lawfare-green underline transition-colors hover:text-lawfare-green/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                   >
                     CourtListener ↗
                   </a>
@@ -149,30 +149,7 @@ export function CaseCard({ caseData: c, isOpen, onToggle, groupColor }: CaseCard
               )}
             </div>
 
-            {/* Metadata chips */}
-            <div className="flex gap-1.5 flex-wrap">
-              <span className="text-[0.65rem] text-muted-foreground bg-muted px-2 py-0.5 rounded-sm">
-                {c.jurisdiction}
-              </span>
-              {c.caseNo && (
-                <span className="font-mono text-[0.6rem] text-muted-foreground bg-muted px-2 py-0.5 rounded-sm">
-                  No. {c.caseNo}
-                </span>
-              )}
-              {c.date && (
-                <span className="font-mono text-[0.6rem] text-muted-foreground bg-muted px-2 py-0.5 rounded-sm">
-                  {c.date}
-                </span>
-              )}
-              {c.entryNos?.map((e, i) => (
-                <span
-                  key={i}
-                  className="font-mono text-[0.6rem] text-muted-foreground bg-muted px-2 py-0.5 rounded-sm"
-                >
-                  Entry {e}
-                </span>
-              ))}
-            </div>
+
           </div>
         </CollapsibleContent>
       </div>

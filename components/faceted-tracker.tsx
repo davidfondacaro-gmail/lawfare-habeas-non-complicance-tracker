@@ -341,13 +341,13 @@ export function FacetedTracker() {
 
                 <div className="flex items-center gap-2">
                   <span className="text-xs text-muted-foreground">Sort by</span>
-                  <Select value={sortBy} onValueChange={(v) => v && setSortBy(v)}>
+                  <Select value={sortBy} onValueChange={(v) => v && setSortBy(v)} itemToStringLabel={(v) => ({ recent: "Most recent", alpha: "Case Name", jurisdiction: "Jurisdiction", judge: "Judge" })[v as string] ?? String(v)}>
                     <SelectTrigger className="h-7 text-xs w-32">
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="recent">Most recent</SelectItem>
-                      <SelectItem value="alpha">A → Z</SelectItem>
+                      <SelectItem value="alpha">Case Name</SelectItem>
                       <SelectItem value="jurisdiction">Jurisdiction</SelectItem>
                       <SelectItem value="judge">Judge</SelectItem>
                     </SelectContent>
