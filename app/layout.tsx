@@ -3,7 +3,7 @@ import "./globals.css"
 import { Providers } from "@/components/providers"
 
 export const metadata: Metadata = {
-  title: "Government Contempt & Non-Compliance Tracker",
+  title: "Habeas Non-Compliance Tracker",
   description:
     "Tracking instances where federal courts have found or threatened contempt, sanctions, or other remedial action against the government for non-compliance with court orders in immigration and habeas corpus cases.",
 }

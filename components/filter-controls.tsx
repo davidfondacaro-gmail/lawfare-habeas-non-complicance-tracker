@@ -87,7 +87,7 @@ export function FilterControls({
         </SelectContent>
       </Select>
 
-      <Select value={sortBy} onValueChange={(v) => onSortByChange(v ?? "recent")}>
+      <Select value={sortBy} onValueChange={(v) => onSortByChange(v ?? "recent")} itemToStringLabel={(v) => ({ recent: "Sort: Most Recent", alpha: "Sort: Case Name", jurisdiction: "Sort: Jurisdiction", judge: "Sort: Judge" })[v as string] ?? String(v)}>
         <SelectTrigger
           aria-label="Sort order"
           className="h-8 text-xs w-auto min-w-36 dark:bg-[#111118] dark:border-[#2a2a3a]"
