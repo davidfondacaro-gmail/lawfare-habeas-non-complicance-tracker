@@ -341,7 +341,7 @@ export function FacetedTracker() {
 
                 <div className="flex items-center gap-2">
                   <span className="text-xs text-muted-foreground">Sort by</span>
-                  <Select value={sortBy} onValueChange={(v) => v && setSortBy(v)} itemToStringLabel={(v) => ({ recent: "Most recent", alpha: "Case Name", jurisdiction: "Jurisdiction", judge: "Judge" })[v as string] ?? String(v)}>
+                  <Select value={sortBy} onValueChange={(v) => v && setSortBy(v)}>
                     <SelectTrigger className="h-7 text-xs w-32">
                       <SelectValue />
                     </SelectTrigger>

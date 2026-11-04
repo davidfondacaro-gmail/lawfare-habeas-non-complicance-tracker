@@ -55,17 +55,15 @@ function FacetOptionItem({ opt, checked, dimmed, onToggle }: {
           aria-label={opt.label}
         />
         <Tooltip open={isTruncated}>
-          <TooltipTrigger
-            render={
-              <span
-                ref={spanRef}
-                className="flex-1 min-w-0 truncate text-foreground/90 leading-tight"
-                onMouseEnter={() => setActive(true)}
-                onMouseLeave={() => setActive(false)}
-              />
-            }
-          >
-            {opt.label}
+          <TooltipTrigger asChild>
+            <span
+              ref={spanRef}
+              className="flex-1 min-w-0 truncate text-foreground/90 leading-tight"
+              onMouseEnter={() => setActive(true)}
+              onMouseLeave={() => setActive(false)}
+            >
+              {opt.label}
+            </span>
           </TooltipTrigger>
           <TooltipContent side="top">{opt.label}</TooltipContent>
         </Tooltip>
