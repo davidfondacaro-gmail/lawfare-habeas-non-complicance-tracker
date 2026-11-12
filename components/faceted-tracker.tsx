@@ -386,7 +386,7 @@ export function FacetedTracker() {
               {/* Footer */}
               {filtered.length > 0 && (
                 <div className="mt-6 border border-border rounded-lg p-4 dark:bg-[#0e0e16] dark:border-[#1e1e2a]">
-                  <div className="text-[0.6rem] font-semibold uppercase tracking-widest text-red-500 mb-1.5">
+                  <div className="text-[0.6rem] font-semibold uppercase tracking-widest text-lawfare-green mb-1.5">
                     About This Tracker
                   </div>
                   <p className="text-xs text-muted-foreground leading-relaxed mb-2">
@@ -397,7 +397,7 @@ export function FacetedTracker() {
                       href="https://www.lawfaremedia.org/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-red-500 hover:underline focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring rounded-sm"
+                      className="text-lawfare-green hover:underline focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring rounded-sm"
                     >
                       Lawfare Institute
                     </a>
@@ -406,7 +406,7 @@ export function FacetedTracker() {
                       href="https://www.courtlistener.com/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-400 hover:underline focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring rounded-sm"
+                      className="text-lawfare-green hover:underline focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring rounded-sm"
                     >
                       CourtListener RECAP
                     </a>

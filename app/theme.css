@@ -105,7 +105,7 @@
   --warning-text: #fcd34d; /* amber-300 · 11.2:1 on #2a2a2a ✓ WCAG AAA */
   --border: #3e3e3e;
   --input: #6a6a6a; /* Softened input border for dark mode */
-  --ring: #ac72f9;
+  --ring: #4dd0d6;
 
   /* Chart */
   --chart-1: #ac72f9;
@@ -122,7 +122,7 @@
   --sidebar-accent: #3d2066;
   --sidebar-accent-foreground: #d4b5ff;
   --sidebar-border: #3e3e3e;
-  --sidebar-ring: #ac72f9;
+  --sidebar-ring: #4dd0d6;
 
   /* Canvas dot grid */
   --canvas-dot-color: 255, 255, 255;
