@@ -108,7 +108,7 @@ export function CaseCard({ caseData: c, isOpen, onToggle, groupColor }: CaseCard
                   href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs text-lawfare-green underline transition-colors hover:text-lawfare-green/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  className="text-xs text-lawfare-green dark:text-lawfare-green-contrast underline transition-colors hover:text-lawfare-green/70 dark:hover:text-lawfare-green-contrast/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 >
                   View Filing/Order
                   {c.entryNos?.[i]
@@ -124,7 +124,7 @@ export function CaseCard({ caseData: c, isOpen, onToggle, groupColor }: CaseCard
                   href={c.docketUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-xs text-lawfare-green underline transition-colors hover:text-lawfare-green/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                  className="text-xs text-lawfare-green dark:text-lawfare-green-contrast underline transition-colors hover:text-lawfare-green/70 dark:hover:text-lawfare-green-contrast/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 >
                   Full Docket on CourtListener ↗
                 </a>
@@ -137,7 +137,7 @@ export function CaseCard({ caseData: c, isOpen, onToggle, groupColor }: CaseCard
                     href={url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs text-lawfare-green underline transition-colors hover:text-lawfare-green/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                    className="text-xs text-lawfare-green dark:text-lawfare-green-contrast underline transition-colors hover:text-lawfare-green/70 dark:hover:text-lawfare-green-contrast/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                   >
                     CourtListener ↗
                   </a>

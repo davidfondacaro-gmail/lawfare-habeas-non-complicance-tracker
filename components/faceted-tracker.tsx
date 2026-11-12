@@ -222,7 +222,7 @@ export function FacetedTracker() {
         <div className="max-w-[1280px] mx-auto px-5">
           <div className="flex items-center justify-between mb-1">
             <div className="flex items-baseline gap-3">
-              <span className="text-[14px] font-bold uppercase tracking-[0.22em] text-lawfare-green">
+              <span className="text-[14px] font-bold uppercase tracking-[0.22em] text-lawfare-green dark:text-lawfare-green-contrast">
                 Lawfare Institute
               </span>
             </div>

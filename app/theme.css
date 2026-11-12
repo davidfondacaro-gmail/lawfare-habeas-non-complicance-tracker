@@ -15,6 +15,10 @@
   --precisely-purple-xlight: #eadbff;
   --precisely-purple-dark: #2c0066;
 
+  /* Lawfare brand */
+  --lawfare-green: #006a72;
+  --lawfare-green-contrast: #006a72;
+
   /* ShadCN core */
   --background: #ffffff;
   --foreground: #121212;
@@ -73,6 +77,8 @@
   --precisely-purple-light: #d4b5ff;
   --precisely-purple-xlight: #3d2066;
   --precisely-purple-dark: #d4b5ff;
+
+  --lawfare-green-contrast: #66cbd2;
 
   /* ShadCN core */
   --background: #1e1e1e;

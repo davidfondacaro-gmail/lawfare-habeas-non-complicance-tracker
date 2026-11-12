@@ -81,6 +81,8 @@
   --color-status-error: var(--status-error);
   --color-status-info: var(--status-info);
   --color-warning-text: var(--warning-text);
+  --color-lawfare-green: var(--lawfare-green);
+  --color-lawfare-green-contrast: var(--lawfare-green-contrast);
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
